@@ -31,6 +31,5 @@ if __name__ == '__main__':
 
 
 
-client.run('NjcyNjk1MTE3NzczMTQ0MDY2.XjPOcg.kNDxqs-i7PftE_5mj6m2YffMyd8')
-#https://discordapp.com/api/oauth2/authorize?client_id=672695117773144066&permissions=8&scope=bot
-#NjcyNjk1MTE3NzczMTQ0MDY2.XjPOcg.kNDxqs-i7PftE_5mj6m2YffMyd8
+client.run('Token')
+
