@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: discord Voice
+      run: pip install -U discord.py[voice]
+    - name: discord 
+      run: py -3 -m pip install -U discord.py
+    - name: Music Bot
+      run: pip install youtube-dl
+    - name: Double Check
+      run: pip install --upgrade youtube-dl
