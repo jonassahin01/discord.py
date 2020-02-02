@@ -1,2 +1,3 @@
-# discord.py
-Open source Python code for Discord bot API 
+# discord.py v1.0
+
+
