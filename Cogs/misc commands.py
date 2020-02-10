@@ -45,6 +45,26 @@ class misccommands(commands.Cog):
         await ctx.message.delete()
         await ctx.send("{}" .format(msg))
 
+    @commands.command(aliases=['utube' , 'youtube'])
+    async def YT(self,ctx):
+        await ctx.send(f'https://www.youtube.com/channel/UCT6NBRtmiuSSIYUKxuCOsOw?view_as=subscriber')
+
+    @commands.command(aliases=['Kontakte'])
+    async def VK(self,ctx):
+        await ctx.send(f'https://vk.com/raizbag')
+
+
+    @commands.command()
+    async def profile(self,ctx, member : discord.Member):
+        embeds = discord.Embed(title=member.name)
+        embeds.add_field(name="Status", value= member.status)
+        embeds.add_field(name="Role", value= member.top_role)
+        embeds.add_field(name="ID", value=member.id)
+        embeds.add_field(name="Created", value=member.created_at)
+        embeds.add_field(name="Joined", value=member.joined_at)
+        embeds.set_thumbnail(url=member.avatar_url)
+        await ctx.send(embed=embeds)
+
 def setup(bot):
     bot.add_cog(misccommands(bot))
 
