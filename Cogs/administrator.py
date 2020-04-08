@@ -17,7 +17,7 @@ class AdministratorCommands(commands.Cog):
     @commands.has_permissions(ban_members=True)
     async def softban(self, ctx, member : discord.Member, *, reason=None):
         if not member:
-            return await ctx.send("Вы должны указать пользователя")
+            return await ctx.send("You must specify a user")
 
         try:
             await member.ban(reason=None)
@@ -42,7 +42,7 @@ class AdministratorCommands(commands.Cog):
     @commands.has_permissions(ban_members=True)
     async def ban(self, ctx, member : discord.Member, *, reason=None):
         await member.ban(reason=reason)
-        await ctx.send(f'запрещенный {member.mention}')
+        await ctx.send(f'Forbidden {member.mention}')
 
     @commands.command(aliases=['унбан'])
     @commands.has_permissions(ban_members=True)
@@ -67,7 +67,7 @@ class AdministratorCommands(commands.Cog):
         for role in guild.roles:
             if role.name == "Muted":
                 await member.add_roles(role)
-                await ctx.send("{} пользователь {} был немой" .format(member.mention,ctx.author.mention))
+                await ctx.send("{} User{} Was muted" .format(member.mention,ctx.author.mention))
                 return
 
                 overwrite = discord.PermissionOverwrite(send_messages=False)
@@ -77,7 +77,7 @@ class AdministratorCommands(commands.Cog):
                     await channel.set_permissions(newRole,overwrite=overwrite)
 
                 await member.add_roles(newRole)
-                await ctx.send("{}  пользователь {} был немой" .format(member.mention,ctx.author.mention))
+                await ctx.send("{}  User {} Was muted" .format(member.mention,ctx.author.mention))
 
     @commands.command(aliases=['уннемой'])
     @commands.has_permissions(ban_members=True)
@@ -87,7 +87,7 @@ class AdministratorCommands(commands.Cog):
         for role in guild.roles:
             if role.name == "Muted":
                 await member.remove_roles(role)
-                await ctx.send("{} пользователь был уннемой" .format(member.mention))
+                await ctx.send("{} The User Was Unmuted" .format(member.mention))
             return
 
 def setup(bot):
