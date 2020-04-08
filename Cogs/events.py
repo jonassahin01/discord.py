@@ -14,22 +14,22 @@ class EventsCog(commands.Cog):
     @commands.Cog.listener()
     async def on_member_remove(self,ctx, member):
         print(f'{member} покинул сервер.')
-        await ctx.send(f'{member}пока, покинул сервер.')
+        await ctx.send(f'{member}bye!, left the server.')
 
     @commands.Cog.listener()
     async def on_member_join(self,ctx, member):
         print(f'{member} присоединился к серверу.')
-        await ctx.send(f'{member}добро пожаловать, присоединился к серверу.')
+        await ctx.send(f'{member}Welcome, Joined the server.')
 
 
     @commands.Cog.listener()
     async def on_command_error(self,ctx, error):
         if isinstance(error, commands.CommandNotFound):
-            await ctx.send('Эта команда не существует.')
+            await ctx.send('This command does not exist.')
 
     @commands.Cog.listener()
     async def filter_message(self, message, ctx):
-        filter = ["Хуй тебе", "ебать тебя", "блять", "Хуй"]
+        filter = ["Curse1", "Curse1", "Curse", "Curse Words/links"]
 
         for word in filter:
             if message.content.count(word) > 0:
