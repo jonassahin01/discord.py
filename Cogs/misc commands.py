@@ -18,26 +18,26 @@ class misccommands(commands.Cog):
     @commands.command(aliases=['8ball', '8мяч', 'мяч'])
     async def _8ball(self, ctx, *, question):
         responses = [
-                "Это точно.",
-                "Это решительно так.",
-                "Без сомнения.",
-                "Да, безусловно.",
-                "Вы можете положиться на него.",
-                "Как я понимаю, да.",
-                "Более вероятный.",
-                "Прогноз хороший.",
-                "Да.",
-                "Знаки указывают на да.",
-                "Ответить туманно, попробуйте еще раз.",
-                "Спросите еще раз позже.",
-                "Лучше не говорить тебе сейчас.",
-                "Не могу предсказать сейчас.",
-                "Сконцентрируйся и спроси снова.",
-                "Не рассчитывай на это.",
-                "Мой ответ - нет.",
-                "Мои источники говорят нет.",
-                "Перспектива не очень хорошая.",
-                "Очень сомнительно."]
+                "It is certain.",
+                "It is decidedly so.",
+                "Without a doubt.",
+                "Yes - definitely.",
+                " You may rely on it.",
+                " As I see it, yes.",
+                "Most likely.",
+                " Outlook good.",
+                "Yes.",
+                "Signs point to yes.",
+                "Reply hazy, try again.",
+                "Ask again later.",
+                "Better not tell you now.",
+                "Cannot predict now.",
+                "Concentrate and ask again.",
+                "Don't count on it.",
+                " My reply is no.",
+                "My sources say no.",
+                "Outlook not so good.",
+                "Very doubtful."]
         await ctx.send(f'Вопрос: {question}\nОтвет: {random.choice(responses)}')
 
     @commands.command(aliases=['сказать' , 'сказ'])
@@ -47,11 +47,11 @@ class misccommands(commands.Cog):
 
     @commands.command(aliases=['utube' , 'youtube'])
     async def YT(self,ctx):
-        await ctx.send(f'https://www.youtube.com/channel/UCT6NBRtmiuSSIYUKxuCOsOw?view_as=subscriber')
+        await ctx.send(f'https://studio.youtube.com/channel/UCbXGt-KFvOw1LvEM-T9KV5A')
 
     @commands.command(aliases=['Kontakte'])
     async def VK(self,ctx):
-        await ctx.send(f'https://vk.com/raizbag')
+        await ctx.send(f'https://vk.com/tr_jonas')
 
 
     @commands.command()
@@ -68,5 +68,4 @@ class misccommands(commands.Cog):
 def setup(bot):
     bot.add_cog(misccommands(bot))
 
-#https://www.youtube.com/channel/UCT6NBRtmiuSSIYUKxuCOsOw?view_as=subscriber
-#https://vk.com/raizbag
+
