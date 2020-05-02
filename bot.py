@@ -36,5 +36,5 @@ if __name__ == '__main__':
 
 
 
-client.run('NjU0MjQ4MzAxNDY5ODkyNjIx.Xq1Uuw.Gid-8C8f_HJiHMl14SR7ykDaNPI')
+client.run('TOKEN')
 
