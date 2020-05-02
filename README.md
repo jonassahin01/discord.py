@@ -1,3 +1,4 @@
-# discord.py v1.0
+# discord.py v1.1
+
 
 
