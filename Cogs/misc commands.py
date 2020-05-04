@@ -1,15 +1,21 @@
 import discord
-import random
-import json
-import asyncio
-import os
+import json, random, requests, datetime, time, urllib.request, io, os, aiohttp
+
+from typing import Union
 from discord.ext import commands
 from discord.utils import get
+from random import randint
 
+global mm
 
 class misccommands(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
+
+
+
+
+
 
     @commands.command(aliases=['пинг'])
     async def ping(self,ctx):
@@ -74,7 +80,44 @@ class misccommands(commands.Cog):
 
         await ctx.send(embed=embed)
 
+    @commands.command()
+    async def calculate(self, ctx, a:int, b:int):
+        await ctx.send(a+b)
+
+    @commands.command()
+    async def subtract(self, ctx, a:int, b:int):
+        await ctx.send(a-b)
+
+    @commands.command()
+    async def multiply(self, ctx, a:int, b:int):
+        await ctx.send(a*b)
+
+    @commands.command()
+    async def division(self, ctx, a:int, b:int):
+        if b==0:
+            ans="0"
+        else:
+            ans=a/b
+        await ctx.send(ans)
+
+    @commands.command()
+    async def memo(self,ctx, a:str):
+        global mm
+        mm=a
+        await ctx.send("okay")
+
+
+    @commands.command()
+    async def remind(self,ctx):
+        await ctx.send(mm)
+
+    @commands.command(name='bigemoji')
+    async def get_emoji_url(self, ctx, emoji: Union[discord.Emoji, discord.PartialEmoji, str]):
+        """Sends a big version of an emoji and it's URL of available"""
+        if isinstance(emoji, (discord.Emoji, discord.PartialEmoji)):
+            await ctx.send(str(emoji.url))
+        else:
+            await ctx.send(emoji)
+
 def setup(bot):
     bot.add_cog(misccommands(bot))
-
-
